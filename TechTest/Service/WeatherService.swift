@@ -18,6 +18,7 @@ class WeatherService: WeatherServiceProtocol {
     private let urlPrefix = "https://api.darksky.net/forecast/"
     private let apiKey = "287007381346d72dac7172e2e3c49472"
 
+    // TODO: Add error handling
     func getWeather(coordinate: CLLocationCoordinate2D, onComplete: @escaping ((Weather) -> Void)) {
         if let url = self.url(coordinate: coordinate) {
             let request = URLRequest(url: url)

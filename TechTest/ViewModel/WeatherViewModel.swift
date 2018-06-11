@@ -14,8 +14,11 @@ class WeatherViewModel {
     var degrees = BehaviorSubject<String?>(value: nil)
     
     private var formatter = MeasurementFormatter()
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
+    private let locationService: LocationServiceProtocol
+    private let weatherService: WeatherServiceProtocol
+
     var location: Location? {
         didSet {
             if let cityName = location?.city {
@@ -40,8 +43,11 @@ class WeatherViewModel {
         }
     }
     
-    init() {
-        LocationService.shared.location.asObservable().subscribe(onNext: { (newLocation) in
+    init(locationService: LocationServiceProtocol, weatherService: WeatherServiceProtocol) {
+        self.locationService = locationService
+        self.weatherService = weatherService
+        
+        self.locationService.location.asObservable().subscribe(onNext: { (newLocation) in
             self.location = newLocation
         }, onError: { (error) in
             // TODO: Error handling
@@ -50,7 +56,7 @@ class WeatherViewModel {
     
     func refreshWeather() {
         guard let coordinate = self.location?.coordinates else { return }
-        WeatherService.shared.getWeather(coordinate: coordinate) { (weather) in
+        self.weatherService.getWeather(coordinate: coordinate) { (weather) in
             self.weather = weather
         }
     }

@@ -13,7 +13,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var degreeLabel: UILabel!
         
-    let viewModel = WeatherViewModel()
+    let viewModel = WeatherViewModel(locationService: ServiceConfiguration.shared.location, weatherService: ServiceConfiguration.shared.weather)
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {

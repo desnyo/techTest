@@ -8,6 +8,7 @@ target 'TechTest' do
   # Pods for TechTest
   pod 'RxSwift', '4.1.2'
   pod 'SwiftyJSON', '4.1.0'
+  pod 'Nimble', '7.1.1'
 
   target 'TechTestTests' do
     inherit! :search_paths
