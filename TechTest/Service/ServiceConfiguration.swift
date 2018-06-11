@@ -12,5 +12,6 @@ struct ServiceConfiguration {
     static let shared = ServiceConfiguration()
     
     var location: LocationServiceProtocol = LocationService.shared
+    var restaurant: RestaurantServiceProtocol = RestaurantService.shared
     var weather: WeatherServiceProtocol = WeatherService.shared
 }

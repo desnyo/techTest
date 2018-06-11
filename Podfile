@@ -6,9 +6,10 @@ target 'TechTest' do
   use_frameworks!
 
   # Pods for TechTest
-  pod 'RxSwift', '4.1.2'
-  pod 'SwiftyJSON', '4.1.0'
   pod 'Nimble', '7.1.1'
+  pod 'RxSwift', '4.1.2'
+  pod 'SDWebImage', '4.3.3'
+  pod 'SwiftyJSON', '4.1.0'
 
   target 'TechTestTests' do
     inherit! :search_paths

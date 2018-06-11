@@ -31,6 +31,7 @@ class WeatherViewController: UIViewController {
     }
     
     func addBindings() {
+        // TODO: Add error handling and loading animation
         viewModel.city.subscribe(onNext: { (city) in
             if let city = city {
                 self.cityNameLabel.text = city

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TechTest/View/ViewControllers/NavigationViewController.swift"
-            timestampString = "550431871.475782"
+            timestampString = "550444005.108059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TechTest/View/ViewControllers/RestaurantViewController.swift"
-            timestampString = "550431871.476065"
+            timestampString = "550444005.108102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "preferredStatusBarStyle"
             landmarkType = "24">
          </BreakpointContent>

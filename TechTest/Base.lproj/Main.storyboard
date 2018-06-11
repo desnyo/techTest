@@ -441,7 +441,7 @@
                                 <rect key="frame" x="0.0" y="114" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="141" id="XiY-YB-f2Y">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantTableViewCell" rowHeight="141" id="XiY-YB-f2Y" customClass="RestaurantTableViewCell" customModule="TechTest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="141"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XiY-YB-f2Y" id="dRZ-nm-INI">
@@ -555,8 +555,25 @@
                                                 <constraint firstItem="wJu-yd-Rwc" firstAttribute="leading" secondItem="dTI-Ky-61r" secondAttribute="trailing" id="rkt-OC-veG"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cuisineLabel" destination="LON-6c-5Nd" id="F9o-1t-nwx"/>
+                                            <outlet property="locationLabel" destination="80H-wN-ZnN" id="L5B-fA-xUC"/>
+                                            <outlet property="nameLabel" destination="MXD-0x-keo" id="yoA-q5-6EX"/>
+                                            <outlet property="photoImageView" destination="jHQ-4n-80Q" id="5EU-Qn-b2i"/>
+                                            <outlet property="ratingLabel" destination="ei3-q5-MmO" id="ndi-Xn-eLl"/>
+                                            <outlet property="reviewLabel" destination="PyW-g9-v2p" id="TK6-ht-Uem"/>
+                                            <outlet property="star1" destination="j3D-el-poF" id="MTE-Fc-fxC"/>
+                                            <outlet property="star2" destination="qxC-ko-JDN" id="Xx3-8r-3ge"/>
+                                            <outlet property="star3" destination="eNH-ej-4ex" id="f9J-7H-qmW"/>
+                                            <outlet property="star4" destination="dTI-Ky-61r" id="1H4-xr-9zf"/>
+                                            <outlet property="star5" destination="wJu-yd-Rwc" id="Zvy-fc-Gkd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ulD-Gg-u41" id="my0-5m-766"/>
+                                    <outlet property="delegate" destination="ulD-Gg-u41" id="Dbf-OG-hsO"/>
+                                </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uTV-gy-KMz">
                                 <rect key="frame" x="0.0" y="64" width="375" height="50"/>
@@ -611,6 +628,9 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="aXa-CS-0YR" id="bJg-yz-sq6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AeH-gT-Ts7" sceneMemberID="firstResponder"/>
             </objects>
