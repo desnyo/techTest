@@ -26,6 +26,10 @@
 		6B40B30D20CEF36E00B23E8B /* LocationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B40B30B20CEF36E00B23E8B /* LocationServiceProtocol.swift */; };
 		6B40B30F20CEF37700B23E8B /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B40B30E20CEF37700B23E8B /* LocationService.swift */; };
 		6B40B31020CEF37700B23E8B /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B40B30E20CEF37700B23E8B /* LocationService.swift */; };
+		6B40B31220CEFE7700B23E8B /* WeatherServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B40B31120CEFE7700B23E8B /* WeatherServiceProtocol.swift */; };
+		6B40B31320CEFE7700B23E8B /* WeatherServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B40B31120CEFE7700B23E8B /* WeatherServiceProtocol.swift */; };
+		6B40B31520CEFE7F00B23E8B /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B40B31420CEFE7F00B23E8B /* WeatherService.swift */; };
+		6B40B31620CEFE7F00B23E8B /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B40B31420CEFE7F00B23E8B /* WeatherService.swift */; };
 		6BE82C8220CED6AE00255463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE82C8120CED6AE00255463 /* AppDelegate.swift */; };
 		6BE82C8420CED6AE00255463 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE82C8320CED6AE00255463 /* WeatherViewController.swift */; };
 		6BE82C8720CED6AE00255463 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE82C8520CED6AE00255463 /* Main.storyboard */; };
@@ -61,6 +65,8 @@
 		6B40B30820CEF0C800B23E8B /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		6B40B30B20CEF36E00B23E8B /* LocationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceProtocol.swift; sourceTree = "<group>"; };
 		6B40B30E20CEF37700B23E8B /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		6B40B31120CEFE7700B23E8B /* WeatherServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceProtocol.swift; sourceTree = "<group>"; };
+		6B40B31420CEFE7F00B23E8B /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		6BE82C7E20CED6AE00255463 /* TechTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE82C8120CED6AE00255463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BE82C8320CED6AE00255463 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +137,8 @@
 			children = (
 				6B40B30B20CEF36E00B23E8B /* LocationServiceProtocol.swift */,
 				6B40B30E20CEF37700B23E8B /* LocationService.swift */,
+				6B40B31120CEFE7700B23E8B /* WeatherServiceProtocol.swift */,
+				6B40B31420CEFE7F00B23E8B /* WeatherService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -335,10 +343,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TechTest/Pods-TechTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -370,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B40B31220CEFE7700B23E8B /* WeatherServiceProtocol.swift in Sources */,
 				6B40B30420CEEF2600B23E8B /* DailyWeather.swift in Sources */,
 				6B40B2F120CEE9D500B23E8B /* NavigationViewController.swift in Sources */,
 				6B40B2FE20CEEF1700B23E8B /* Review.swift in Sources */,
@@ -379,6 +390,7 @@
 				6B40B2F420CEEE9200B23E8B /* RestaurantViewModel.swift in Sources */,
 				6B40B30120CEEF1D00B23E8B /* Location.swift in Sources */,
 				6B40B2FB20CEEF0F00B23E8B /* Restaurant.swift in Sources */,
+				6B40B31520CEFE7F00B23E8B /* WeatherService.swift in Sources */,
 				6B40B30F20CEF37700B23E8B /* LocationService.swift in Sources */,
 				6BE82CA520CED6EF00255463 /* RestaurantViewController.swift in Sources */,
 				6B40B2F820CEEF0900B23E8B /* Weather.swift in Sources */,
@@ -392,12 +404,14 @@
 			files = (
 				6B40B2FF20CEEF1700B23E8B /* Review.swift in Sources */,
 				6B40B30520CEEF2600B23E8B /* DailyWeather.swift in Sources */,
+				6B40B31620CEFE7F00B23E8B /* WeatherService.swift in Sources */,
 				6B40B2FC20CEEF0F00B23E8B /* Restaurant.swift in Sources */,
 				6BE82C9720CED6AE00255463 /* TechTestTests.swift in Sources */,
 				6B40B30D20CEF36E00B23E8B /* LocationServiceProtocol.swift in Sources */,
 				6B40B2F920CEEF0900B23E8B /* Weather.swift in Sources */,
 				6B40B30220CEEF1D00B23E8B /* Location.swift in Sources */,
 				6B40B31020CEF37700B23E8B /* LocationService.swift in Sources */,
+				6B40B31320CEFE7700B23E8B /* WeatherServiceProtocol.swift in Sources */,
 				6B40B2F520CEEE9200B23E8B /* RestaurantViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

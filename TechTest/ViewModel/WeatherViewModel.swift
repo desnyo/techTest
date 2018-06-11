@@ -33,7 +33,8 @@ class WeatherViewModel {
         didSet {
             if let temperature = weather?.currentTemperature {
                 DispatchQueue.main.async {
-                    self.degrees.onNext(self.formatter.string(from: temperature))
+                    // TODO: Remove Fahrenheit hardcoding
+                    self.degrees.onNext(String(Int(temperature.converted(to: .fahrenheit).value)))
                 }
             }
         }
@@ -48,6 +49,9 @@ class WeatherViewModel {
     }
     
     func refreshWeather() {
-        guard let location = self.location else { return }
+        guard let coordinate = self.location?.coordinates else { return }
+        WeatherService.shared.getWeather(coordinate: coordinate) { (weather) in
+            self.weather = weather
+        }
     }
 }

@@ -10,8 +10,8 @@ import Foundation
 
 class DailyWeather {
     var day: Date?
-    var minTemperature: UnitTemperature?
-    var maxTemperature: UnitTemperature?
+    var minTemperature: Measurement<UnitTemperature>?
+    var maxTemperature: Measurement<UnitTemperature>?
     
     init(data: AnyObject) {
         
