@@ -420,6 +420,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="IdZ-qX-FRI"/>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="UXH-TE-nXi" id="OXo-bf-pri"/>
+                        <outlet property="degreeLabel" destination="v94-4Y-3Gc" id="oCH-1W-VYA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

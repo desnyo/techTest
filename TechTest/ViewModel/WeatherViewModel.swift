@@ -14,6 +14,7 @@ class WeatherViewModel {
     var degrees = BehaviorSubject<String?>(value: nil)
     
     private var formatter = MeasurementFormatter()
+    let disposeBag = DisposeBag()
     
     var location: Location? {
         didSet {
@@ -21,6 +22,9 @@ class WeatherViewModel {
                 DispatchQueue.main.async {
                     self.city.onNext(cityName)
                 }
+            }
+            DispatchQueue.main.async {
+                self.refreshWeather()
             }
         }
     }
@@ -33,5 +37,17 @@ class WeatherViewModel {
                 }
             }
         }
+    }
+    
+    init() {
+        LocationService.shared.location.asObservable().subscribe(onNext: { (newLocation) in
+            self.location = newLocation
+        }, onError: { (error) in
+            // TODO: Error handling
+        }, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
+    }
+    
+    func refreshWeather() {
+        guard let location = self.location else { return }
     }
 }

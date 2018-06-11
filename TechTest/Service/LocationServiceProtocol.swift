@@ -1,5 +1,5 @@
 //
-//  Location.swift
+//  LocationServiceProtocol.swift
 //  TechTest
 //
 //  Created by Miklos Lang on 2018. 06. 11..
@@ -8,10 +8,8 @@
 
 import Foundation
 import CoreLocation
+import RxSwift
 
-class Location {
-    var city: String?
-    var address: String?
-    var coordinates: CLLocationCoordinate2D?
-    
+protocol LocationServiceProtocol {
+    var location: Variable<Location?> { get }
 }

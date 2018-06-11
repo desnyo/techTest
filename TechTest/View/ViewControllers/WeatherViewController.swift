@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WeatherViewController.swift
 //  TechTest
 //
 //  Created by Miklos Lang on 2018. 06. 11..
@@ -7,10 +7,18 @@
 //
 
 import UIKit
+import RxSwift
 
 class WeatherViewController: UIViewController {
+    @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var degreeLabel: UILabel!
+        
+    let viewModel = WeatherViewModel()
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addBindings()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -20,6 +28,20 @@ class WeatherViewController: UIViewController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
+    }
+    
+    func addBindings() {
+        viewModel.city.subscribe(onNext: { (city) in
+            if let city = city {
+                self.cityNameLabel.text = city
+            }
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
+
+        viewModel.degrees.subscribe(onNext: { (degrees) in
+            if let degrees = degrees {
+                self.degreeLabel.text = degrees
+            }
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
     }
 }
 
